@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POP1376 · 个人主页</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; color: #24292f; background: #f6f8fa; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* 导航栏 */
+  nav { position: sticky; top: 0; background: rgba(255,255,255,.9); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e8eb; z-index: 10; }
+  nav .container { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav .logo { font-weight: 700; font-size: 18px; }
+  nav ul { display: flex; gap: 24px; list-style: none; font-size: 15px; }
+  nav ul a:hover { color: #0969da; }
+
+  /* 顶部展示区 */
+  .hero { background: linear-gradient(135deg, #0d419d 0%, #6e40c9 100%); color: #fff; padding: 96px 0 80px; text-align: center; }
+  .hero h1 { font-size: 40px; margin-bottom: 12px; }
+  .hero p { font-size: 18px; opacity: .92; max-width: 640px; margin: 0 auto 28px; }
+  .hero .btn { display: inline-block; padding: 10px 26px; border-radius: 8px; font-weight: 600; margin: 0 8px; transition: transform .15s; }
+  .hero .btn:hover { transform: translateY(-2px); }
+  .hero .btn-primary { background: #fff; color: #0d419d; }
+  .hero .btn-outline { border: 1.5px solid #fff; color: #fff; }
+
+  /* 区块 */
+  section { padding: 64px 0; }
+  section h2 { font-size: 28px; margin-bottom: 8px; }
+  section .sub { color: #656d76; margin-bottom: 32px; }
+
+  /* 项目卡片 */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { background: #fff; border: 1px solid #e5e8eb; border-radius: 12px; padding: 24px; transition: box-shadow .2s, transform .2s; }
+  .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-3px); }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .card p { font-size: 14.5px; color: #57606a; margin-bottom: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 12.5px; background: #ddf4ff; color: #0969da; padding: 2px 10px; border-radius: 20px; }
+
+  /* 技能 */
+  .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill { background: #fff; border: 1px solid #e5e8eb; border-radius: 8px; padding: 8px 18px; font-size: 15px; }
+
+  /* 联系 */
+  .contact { text-align: center; }
+  .contact a.mail { color: #0969da; font-weight: 600; }
+
+  footer { text-align: center; color: #656d76; font-size: 14px; padding: 32px 0; border-top: 1px solid #e5e8eb; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">POP1376</div>
+    <ul>
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#projects">项目经历</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#contact">联系我</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>你好，我是 POP1376</h1>
+    <p>一名热爱编程与技术实践的学生。这里记录我在科研任务与项目中积累的实践经验：爬虫开发、数据采集与处理，以及更多动手做过的活。</p>
+    <a class="btn btn-primary" href="#projects">查看我的项目</a>
+    <a class="btn btn-outline" href="https://github.com/pop1376" target="_blank">GitHub 主页</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2>关于我</h2>
+    <p class="sub">About Me</p>
+    <p><!-- 在这里写一段自我介绍：学校、专业、研究方向、兴趣等 -->
+      我目前就读于【你的学校】【你的专业】。在导师的指导下参与各类科研与工程任务，
+      习惯把做过的任务沉淀为可复用的代码与文档。本站点用于汇总我的实践经历，
+      作为保研与求职时的能力佐证。
+    </p>
+  </div>
+</section>
+
+<section id="projects" style="background:#fff;">
+  <div class="container">
+    <h2>项目与实践经历</h2>
+    <p class="sub">Projects &amp; Experience —— 导师布置的任务与个人项目都会整理到这里</p>
+    <div class="cards">
+
+      <div class="card">
+        <h3>🕷️ 网络爬虫与数据采集</h3>
+        <p>使用 Python 编写爬虫，完成目标网站的数据抓取、清洗与结构化存储；处理反爬策略（请求头、代理、限速），最终交付可用的数据集。</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Requests</span>
+          <span class="tag">BeautifulSoup</span>
+          <span class="tag">数据清洗</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🛩️ 无人机图像脱敏数据集构建</h3>
+        <p>参与无人机航拍数据的整理与脱敏处理，构建可用于科研的数据集，涉及数据标注规范制定与批量处理脚本编写。</p>
+        <div class="tags">
+          <span class="tag">数据处理</span>
+          <span class="tag">数据集构建</span>
+          <span class="tag">科研任务</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📂 更多项目持续更新中……</h3>
+        <p>后续完成的任务（爬虫、数据分析、脚本工具等）会陆续整理上传到本页面与 GitHub 仓库，欢迎收藏关注。</p>
+        <div class="tags">
+          <span class="tag">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>技能</h2>
+    <p class="sub">Skills</p>
+    <div class="skills">
+      <span class="skill">Python</span>
+      <span class="skill">网络爬虫</span>
+      <span class="skill">数据采集与清洗</span>
+      <span class="skill">Git / GitHub</span>
+      <span class="skill">Linux 基础</span>
+      <span class="skill">HTML / CSS</span>
+      <!-- 按需增删 -->
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:#fff;">
+  <div class="container contact">
+    <h2>联系我</h2>
+    <p class="sub">Contact</p>
+    <p>GitHub：<a class="mail" href="https://github.com/pop1376" target="_blank">github.com/pop1376</a></p>
+    <p>邮箱：<a class="mail" href="mailto:your-email@example.com">your-email@example.com</a> <!-- 换成你的邮箱 --></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2025 POP1376 · 由 GitHub Pages 驱动
+  </div>
+</footer>
+
+</body>
+</html>
